@@ -79,21 +79,18 @@
     <script>
       const inputs = document.querySelectorAll(".controls input");
 
-      function handleUpdate() {
-        const suffix = this.dataset.sizing || ""; //color는 공백으로 나타내기
+      function handleChange() {
+        const suffix = this.dataset.sizing || "";
 
         document.documentElement.style.setProperty(
           `--${this.name}`,
           this.value + suffix
         );
-        console.log(this.name);
-        //    const suffix = this.dataset;
-        //    console.log(suffix); //dataset은 해당 특정 요소의 모든 데이터 속성을 포함하는 객체
       }
 
-      inputs.forEach((input) => input.addEventListener("change", handleUpdate));
-      inputs.forEach((input) =>
-        input.addEventListener("mousemove", handleUpdate)
+      inputs.forEach((item) => item.addEventListener("change", handleChange));
+      inputs.forEach((item) =>
+        item.addEventListener("mousemove", handleChange)
       );
     </script>
   </body>
